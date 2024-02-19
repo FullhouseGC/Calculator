@@ -1,7 +1,7 @@
 let firstNumber;
 let operator;
 let secondNumber;
-let displayValue;
+let displayValue = document.getElementById("display");
 
 const operators = {
     add(a,b){
@@ -27,10 +27,13 @@ function operate(a,operator,b){
     }
 }
 
-/*let number = document.getElementsByClassName("number")
-function display(){
-    let resu = number[0].innerHTML
-    return console.log(resu)
-}*/
 
-console.log(operate(1,"-",2))
+function display(num){
+    let currentNum = document.getElementById("number" + num).innerHTML;
+    if(firstNumber == undefined){
+        firstNumber = currentNum;
+    } else{
+        firstNumber += currentNum
+    }
+    displayValue.textContent = firstNumber;
+}

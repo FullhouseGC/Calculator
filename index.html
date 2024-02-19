@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="displayContainer">
-        <div id="display">928333</div>
+        <div id="display">0</div>
     </div>
     <div class="operators">
         <button>+</button>
@@ -17,19 +17,19 @@
         <button>*</button>
         <button>/</button>
         <button>=</button>
-        <button>Clear</button>
+        <button onclick="together()">Clear</button>
     </div>
     <div class="numbers">
-        <button onclick="display()" class="number">0</button>
-        <button class="number">1</button>
-        <button class="number">2</button>
-        <button>3</button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
+        <button onclick="display(0)" id="number0">0</button>
+        <button onclick="display(1)" id="number1">1</button>
+        <button onclick="display(2)" id="number2">2</button>
+        <button onclick="display(3)" id="number3">3</button>
+        <button onclick="display(4)" id="number4">4</button>
+        <button onclick="display(5)" id="number5">5</button>
+        <button onclick="display(6)" id="number6">6</button>
+        <button onclick="display(7)" id="number7">7</button>
+        <button onclick="display(8)" id="number8">8</button>
+        <button onclick="display(9)" id="number9">9</button>
     </div>
     
     
