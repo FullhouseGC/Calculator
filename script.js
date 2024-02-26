@@ -28,12 +28,28 @@ function operate(a,operator,b){
 }
 
 
+//Put the numbers in an array, split it with an operator, and then combine both numbers and use operator???
+
 function display(num){
-    let currentNum = document.getElementById("number" + num).innerHTML;
-    if(firstNumber == undefined){
-        firstNumber = currentNum;
-    } else{
-        firstNumber += currentNum
+    let pressedNum = document.getElementById("number" + num).innerHTML;
+    if(firstNumber == undefined && operator == undefined){
+        firstNumber = pressedNum;
+    } else if(operator == undefined){
+        firstNumber += pressedNum
     }
     displayValue.textContent = firstNumber;
+    
+    if(operator != undefined && secondNumber == undefined){
+        secondNumber = pressedNum;
+    } else if(operator != undefined){
+        secondNumber += pressedNum;
+    }
+}
+
+function displayOperator(num){
+    let pressedOperator = document.getElementById("operator" + num).innerHTML;
+    if(operator == undefined){
+        operator = pressedOperator;
+    }
+    displayValue.textContent = operator
 }
