@@ -2,7 +2,10 @@ let firstNumber;
 let operator;
 let secondNumber;
 let displayValue = document.getElementById("display");
+let equal = document.getElementById("equal");
+let result;
 
+//Operators
 const operators = {
     add(a,b){
         return a+b;
@@ -18,17 +21,15 @@ const operators = {
     }
 }
 
-function operate(a,operator,b){
+//Function that does the operating
+function operate(firstNumber,operator,secondNumber){
     switch (true){
-        case operator == "+": return operators.add(a, b);
-        case operator == "-": return operators.substract(a, b);
-        case operator == "*": return operators.multiply(a, b);
-        case operator == "/": return operators.divide(a, b);
+        case operator == "+": return displayValue.textContent = operators.add(firstNumber, secondNumber);
+        case operator == "-": return displayValue.textContent = operators.substract(firstNumber, secondNumber);
+        case operator == "*": return displayValue.textContent = operators.multiply(firstNumber, secondNumber);
+        case operator == "/": return displayValue.textContent = operators.divide(firstNumber, secondNumber);
     }
 }
-
-
-//Put the numbers in an array, split it with an operator, and then combine both numbers and use operator???
 
 function display(num){
     let pressedNum = document.getElementById("number" + num).innerHTML;
@@ -41,8 +42,10 @@ function display(num){
     
     if(operator != undefined && secondNumber == undefined){
         secondNumber = pressedNum;
+        displayValue.textContent = secondNumber;
     } else if(operator != undefined){
         secondNumber += pressedNum;
+        displayValue.textContent = secondNumber;
     }
 }
 
@@ -52,4 +55,11 @@ function displayOperator(num){
         operator = pressedOperator;
     }
     displayValue.textContent = operator
+}
+
+function clearCalculator(){
+    firstNumber = undefined;
+    secondNumber = undefined;
+    operator = undefined;
+    displayValue.textContent = 0;
 }
