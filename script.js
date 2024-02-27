@@ -33,18 +33,22 @@ function operate(firstNumber,operator,secondNumber){
 
 function display(num){
     let pressedNum = document.getElementById("number" + num).innerHTML;
+    parseInt(pressedNum)
     if(firstNumber == undefined && operator == undefined){
         firstNumber = pressedNum;
     } else if(operator == undefined){
         firstNumber += pressedNum
     }
+    firstNumber = parseInt(firstNumber)
     displayValue.textContent = firstNumber;
     
     if(operator != undefined && secondNumber == undefined){
         secondNumber = pressedNum;
+        secondNumber = parseInt(secondNumber)
         displayValue.textContent = secondNumber;
     } else if(operator != undefined){
         secondNumber += pressedNum;
+        secondNumber = parseInt(secondNumber)
         displayValue.textContent = secondNumber;
     }
 }
@@ -63,3 +67,4 @@ function clearCalculator(){
     operator = undefined;
     displayValue.textContent = 0;
 }
+
