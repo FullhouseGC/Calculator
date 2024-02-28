@@ -3,7 +3,7 @@ let operator;
 let secondNumber;
 let displayValue = document.getElementById("display");
 let equal = document.getElementById("equal");
-let result;
+let result = "A";
 
 //Operators
 const operators = {
@@ -23,12 +23,28 @@ const operators = {
 
 //Function that does the operating
 function operate(firstNumber,operator,secondNumber){
-    switch (true){
-        case operator == "+": return displayValue.textContent = operators.add(firstNumber, secondNumber);
-        case operator == "-": return displayValue.textContent = operators.substract(firstNumber, secondNumber);
-        case operator == "*": return displayValue.textContent = operators.multiply(firstNumber, secondNumber);
-        case operator == "/": return displayValue.textContent = operators.divide(firstNumber, secondNumber);
+    switch (operator){
+        case "+": firstNumber = operators.add(firstNumber, secondNumber);
+        break;
+        case "-": firstNumber = operators.substract(firstNumber, secondNumber);
+        break;
+        case "*": firstNumber = operators.multiply(firstNumber, secondNumber);
+        break;
+        case "/": if(secondNumber == 0){
+        return displayValue.textContent = "You can't divivde by 0"
+        } else{
+            firstNumber = operators.divide(firstNumber, secondNumber)
+        };
+        break;
     }
+    return firstNumber
+}
+
+function equalCal(){
+    firstNumber = operate(firstNumber,operator,secondNumber)
+    secondNumber = undefined;
+    operator = undefined;
+    displayValue.textContent = firstNumber;
 }
 
 function display(num){
@@ -57,8 +73,13 @@ function displayOperator(num){
     let pressedOperator = document.getElementById("operator" + num).innerHTML;
     if(operator == undefined){
         operator = pressedOperator;
+        displayValue.textContent = operator;
+    } else if(operator != undefined){
+        equalCal()
+        operator = pressedOperator;
+        displayValue.textContent = firstNumber;
     }
-    displayValue.textContent = operator
+    //displayValue.textContent = operator
 }
 
 function clearCalculator(){
