@@ -1,7 +1,124 @@
 body{
-    background-color: rgb(53, 51, 51);
+    background-color: rgba(18, 18, 18, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url(stars.jpg);
+}
+
+#calculator{
+    display: flex;
+    width: 35rem;
+    height: 40rem;
+    flex-direction: column;
+    border: solid white 0.3rem;
+    background-color: #000000d4;
+    border-radius: 20px;
+    padding: 0.7rem;
+}
+
+#displayContainer{
+    margin: 0.5rem;
+    display: flex;
+    height: 15%;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    border: solid white 0.1rem;
+    border-radius: 20px;
+}
+
+#buttonsContainer{
+    height: 85%;
+    display: flex;
+    margin-bottom: 1rem ;
+}
+
+#numbersAndClearEqual{
+    display: flex;
+    height: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+}
+
+#operatorContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    gap: 2rem;
+    margin-left: 3rem;
+}
+
+.allNumber{
+    width: 6rem;
+    height: 6rem;
+    font-family: "Orbitron";
+    border: solid white 0.1rem;
+    border-radius: 20px;
+    font-size: 3rem;
+    color: rgb(255, 255, 255);
+    background-color: rgba(18, 18, 18, 1);
+    border: solid white 0.1rem;
+}
+
+.allOperator{
+    width: 6rem;
+    height: 6rem;
+    font-family: "Orbitron";
+    border: solid white 0.1rem;
+    border-radius: 20px;
+    font-size: 4rem;
+    color: rgb(255, 255, 255);
+    background-color: rgba(18, 18, 18, 1);
+    border: solid rgb(3 107 72) 0.1rem;
+}
+
+#equal{
+    width: 6rem;
+    height: 6rem;
+    font-family: "Orbitron";
+    border: solid rgb(26 2 173) 0.1rem;
+    font-size: 3rem;
+    border-radius: 20px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(18, 18, 18, 1);
+}
+
+#clear{
+    width: 6rem;
+    height: 6rem;
+    font-family: "Orbitron";
+    border: solid rgb(109 0 0) 0.1rem;
+    font-size: 3rem;
+    border-radius: 20px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(18, 18, 18, 1);
 }
 
 #display{
     color: rgb(255, 255, 255);
+    font-family: "Orbitron";
+    font-size: 3rem;
+    align-self: center;
+    margin-left: 0.4rem;
+}
+#operator0{
+    padding-bottom: 0.8rem;
+}
+#operator1{
+    padding-bottom: 0.8rem;
+}
+#operator2{
+    padding-top: 1rem;
+}
+
+#operator3{
+    padding-bottom: 1rem;
 }

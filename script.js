@@ -30,7 +30,7 @@ function operate(firstNumber,operator,secondNumber){
         break;
         case "*": firstNumber = operators.multiply(firstNumber, secondNumber);
         break;
-        case "/": if(secondNumber == 0){
+        case "÷": if(secondNumber == 0){
         return displayValue.textContent = "You can't divivde by 0"
         } else{
             firstNumber = operators.divide(firstNumber, secondNumber)
@@ -79,7 +79,6 @@ function displayOperator(num){
         operator = pressedOperator;
         displayValue.textContent = firstNumber;
     }
-    //displayValue.textContent = operator
 }
 
 function clearCalculator(){
